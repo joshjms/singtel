@@ -5,9 +5,9 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body className="d-flex">
+      <body className="d-flex" style={{backgroundColor:"#32353e"}}>
         <Navbar/>
-        <div className="content">
+        <div className="d-flex flex-row content">
           <Main />
         </div>
         <NextScript />
