@@ -1,7 +1,7 @@
 export default function Navbar() {
     const navbar_menu = [
         {name: "Overview", img: "", url:""},
-        {name: "Inventory", img: "shipping.png", url:"},
+        {name: "Inventory", img: "shipping.png", url:""},
         {name: "Data", img: "database.png", url:""},
         {name: "Other", img: "", url:""},
     ];
