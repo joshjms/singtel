@@ -1,20 +1,72 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "./node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+$dark: #1c2127;
+
+$nav-pills-link-active-bg: #476eef;
+$nav-pills-border-radius: 17px;
+
+$nav-link-color: #ffffff;
+$nav-link-font-size: 10pt;
+$nav-link-font-weight: bold;
+$nav-link-padding-x: 2.5rem;
+$nav-link-padding-y: 1rem;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+
+
+
 @font-face {
     font-family: Kamerik;
-    src: url("@/static/fonts/kamerik.ttf");
+    src: url("/static/fonts/kamerik.ttf");
 }
 
 @font-face {
     font-family: Marlin;
-    src: url("@/static/fonts/marlin.otf");
+    src: url("/static/fonts/marlin.otf");
 }
 
 $font-header: Kamerik;
 $font-navbar: Marlin;
+$width-navbar: 225px;
+
+main {
+    min-height:100vh;
+}
+
+.side-nav {
+    width: $width-navbar; 
+    height:100vh;
+    position:fixed;
+}
+
+.content {
+    margin-left: $width-navbar;
+}
+
+.nav-item {
+    font-family: Marlin, sans-serif;
+    border-radius: 100px;
+    padding: 10px 10px 10px 0px;
+}
+
+.menu-logo {
+    height: 1rem;
+    position: relative;
+    bottom: 1px;
+}
+
+.nav-logo {
+    height: 175px;
+}
 
 .header {
     font-family: Kamerik, 'Courier New', Courier, monospace;
-}
-
-.list-text {
-    font-family: Marlin;
 }
