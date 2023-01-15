@@ -1,9 +1,9 @@
 export default function Navbar() {
     const navbar_menu = [
-        {name: "Overview", img: ""},
-        {name: "Inventory", img: "shipping.png"},
-        {name: "Data", img: "database.png"},
-        {name: "Other", img: ""}
+        {name: "Overview", img: "", url:""},
+        {name: "Inventory", img: "shipping.png", url:"},
+        {name: "Data", img: "database.png", url:""},
+        {name: "Other", img: "", url:""},
     ];
 
     return (
@@ -16,7 +16,7 @@ export default function Navbar() {
           <ul className="nav nav-pills flex-column mb-auto">
             {navbar_menu.map((menu, index) => (
               <li className="nav-item mb-2" key={index}>
-                <a href="#" className="d-flex shadow-lg align-items-center nav-link" aria-current="page">
+                <a href={menu.url} className="d-flex shadow-lg align-items-center nav-link" aria-current="page">
                   <div class="me-3">
                     <img className="menu-logo" src={menu.img} />
                   </div>
