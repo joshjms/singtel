@@ -1,17 +1,13 @@
-import { Html, Head, Main, NextScript } from 'next/document'
-import Navbar from '../components/Navbar'
+import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
-  return (
-    <Html lang="en">
-      <Head />
-      <body className="d-flex" style={{backgroundColor:"#32353e"}}>
-        <Navbar/>
-        <div className="d-flex flex-row content">
-          <Main />
-        </div>
-        <NextScript />
-      </body>
-    </Html>
-  )
+    return (
+        <Html lang="en" data-theme='light'>
+            <Head />
+            <body>
+                <Main />
+                <NextScript />
+            </body>
+        </Html>
+    );
 }
