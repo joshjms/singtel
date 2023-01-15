@@ -1,0 +1,20 @@
+@font-face {
+    font-family: Kamerik;
+    src: url("@/static/fonts/kamerik.ttf");
+}
+
+@font-face {
+    font-family: Marlin;
+    src: url("@/static/fonts/marlin.otf");
+}
+
+$font-header: Kamerik;
+$font-navbar: Marlin;
+
+.header {
+    font-family: Kamerik, 'Courier New', Courier, monospace;
+}
+
+.list-text {
+    font-family: Marlin;
+}
