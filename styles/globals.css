@@ -81,8 +81,9 @@
 
 html,
 body {
-  max-width: 100vw;
+  max-width: 100vh;
   overflow-x: hidden;
+  background-color: #32353E;
 }
 
 body {
@@ -104,4 +105,76 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+
+
+@font-face {
+  font-family: Kamerik;
+  src: url("/static/fonts/kamerik.ttf");
+}
+
+@font-face {
+  font-family: Marlin;
+  src: url("/static/fonts/marlin.otf");
+}
+
+@font-face {
+  font-family: Inter;
+  src: url("/static/fonts/Inter-SemiBold.ttf");
+}
+
+
+.side-nav {
+  height: 100vh;
+  width: 240px;
+  position:fixed;
+}
+
+.nav-item {
+  font-family: Marlin, sans-serif;
+  border-radius: 100px;
+  padding: 10px 10px 10px 0px;
+}
+
+.menu-logo {
+  height: 1rem;
+  position: relative;
+  bottom: 1px;
+}
+
+.nav-logo {
+  height: 175px;
+}
+
+.nav-pills .nav-link {
+  --bs-nav-pills-border-radius: 0.75rem;
+}
+
+.bg-dark {
+  --bs-dark-rgb: 28,33,39;
+}
+
+.nav-link.sidebar-active {
+  background-color: #476eef;
+}
+
+.header {
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  margin: 0px;
+  width: 100%;
+}
+
+.header .container .col {
+  height: 100%;
+}
+
+.header h3 {
+  font-size: 15px;
+}
+
+.header .time {
+  text-align: center;
+  font-size: 13px;
 }
