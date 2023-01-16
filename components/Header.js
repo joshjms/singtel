@@ -1,6 +1,6 @@
 import { NotificationsNoneOutlined } from "@mui/icons-material";
 
-export default function Header() {
+export default function Header({ page }) {
     const getCurrentDate = () => {
         const d = new Date();
 
@@ -27,7 +27,7 @@ export default function Header() {
     return (
         <>
             <div className="w-full flex items-center justify-between">
-                <h1 className="text-3xl"> Dashboard </h1>
+                <h1 className="text-3xl">{page}</h1>
                 <div className="hidden lg:block">{getCurrentDate()}</div>
 
                 <div className="flex gap-3 items-center">

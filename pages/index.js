@@ -20,18 +20,18 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <AppLayout>
+            <AppLayout page="Dashboard">
                 <div className="flex justify-between flex-wrap">
                     <div className="p-5 w-max">
                         <div className="flex gap-2 items-center mb-5">
-                            <h3 className="text-xl ml-5">Sales</h3>
+                            <h3 className="text-xl">Sales</h3>
                             <IconButton><OpenInNewSharp/></IconButton>
                         </div>
                         <SimpleSalesChart />
                     </div>
                     <div className="p-5 w-max">
                         <div className="flex gap-2 items-center mb-5">
-                            <h3 className="text-xl ml-5">Recent Transactions</h3>
+                            <h3 className="text-xl">Recent Transactions</h3>
                             <IconButton><OpenInNewSharp/></IconButton>
                         </div>
                         <SimpleInventoryTable />

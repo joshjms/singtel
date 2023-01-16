@@ -25,10 +25,11 @@ import {
     MailOutlineOutlined,
     TrendingUpOutlined,
 } from "@mui/icons-material";
+import Link from "next/link";
 
 const drawerWidth = 240;
 
-function AppLayout({ children }) {
+function AppLayout({ children, page }) {
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
     const handleDrawerToggle = () => {
@@ -48,22 +49,27 @@ function AppLayout({ children }) {
             </Toolbar>
             <Divider />
             <List>
-                <ListItem disablePadding>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <GridViewOutlined />
-                        </ListItemIcon>
-                        <ListItemText primary="Dashboard" />
-                    </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding>
-                    <ListItemButton>
-                        <ListItemIcon>
-                            <TrendingUpOutlined />
-                        </ListItemIcon>
-                        <ListItemText primary="Statistics" />
-                    </ListItemButton>
-                </ListItem>
+                <Link href="/">
+                    <ListItem disablePadding>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <GridViewOutlined />
+                            </ListItemIcon>
+                            <ListItemText primary="Dashboard" />
+                        </ListItemButton>
+                    </ListItem>
+                </Link>
+
+                <Link href="/statistics">
+                    <ListItem disablePadding>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                <TrendingUpOutlined />
+                            </ListItemIcon>
+                            <ListItemText primary="Statistics" />
+                        </ListItemButton>
+                    </ListItem>
+                </Link>
                 <ListItem disablePadding>
                     <ListItemButton>
                         <ListItemIcon>
@@ -165,7 +171,7 @@ function AppLayout({ children }) {
             >
                 <Toolbar />
                 <div className="w-[90%] mx-auto">
-                    <Header />
+                    <Header page={page} />
                     <Toolbar />
                     {children}
                 </div>
