@@ -16,6 +16,15 @@ import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import Image from "next/image";
+import Header from "./Header";
+import {
+    AnnouncementOutlined,
+    GridViewOutlined,
+    InventoryOutlined,
+    MailOutlineOutlined,
+    TrendingUpOutlined,
+} from "@mui/icons-material";
 
 const drawerWidth = 240;
 
@@ -28,38 +37,60 @@ function AppLayout({ children }) {
 
     const drawer = (
         <div>
-            <Toolbar />
+            <Toolbar className="p-5 flex justify-center">
+                <Image
+                    src="/singtel.png"
+                    alt="singtel"
+                    width={120}
+                    height={120}
+                    priority={true}
+                ></Image>
+            </Toolbar>
             <Divider />
             <List>
-                {["Inbox", "Starred", "Send email", "Drafts"].map(
-                    (text, index) => (
-                        <ListItem key={text} disablePadding>
-                            <ListItemButton>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? (
-                                        <InboxIcon />
-                                    ) : (
-                                        <MailIcon />
-                                    )}
-                                </ListItemIcon>
-                                <ListItemText primary={text} />
-                            </ListItemButton>
-                        </ListItem>
-                    )
-                )}
+                <ListItem disablePadding>
+                    <ListItemButton>
+                        <ListItemIcon>
+                            <GridViewOutlined />
+                        </ListItemIcon>
+                        <ListItemText primary="Dashboard" />
+                    </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                    <ListItemButton>
+                        <ListItemIcon>
+                            <TrendingUpOutlined />
+                        </ListItemIcon>
+                        <ListItemText primary="Statistics" />
+                    </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                    <ListItemButton>
+                        <ListItemIcon>
+                            <InventoryOutlined />
+                        </ListItemIcon>
+                        <ListItemText primary="Inventory" />
+                    </ListItemButton>
+                </ListItem>
             </List>
             <Divider />
             <List>
-                {["All mail", "Trash", "Spam"].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
+                <ListItem disablePadding>
+                    <ListItemButton>
+                        <ListItemIcon>
+                            <AnnouncementOutlined />
+                        </ListItemIcon>
+                        <ListItemText primary="Announcements" />
+                    </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                    <ListItemButton>
+                        <ListItemIcon>
+                            <MailOutlineOutlined />
+                        </ListItemIcon>
+                        <ListItemText primary="Messages" />
+                    </ListItemButton>
+                </ListItem>
             </List>
         </div>
     );
@@ -73,6 +104,8 @@ function AppLayout({ children }) {
                     width: { sm: `calc(100% - ${drawerWidth}px)` },
                     ml: { sm: `${drawerWidth}px` },
                 }}
+                color="transparent"
+                elevation={0}
             >
                 <Toolbar>
                     <IconButton
@@ -84,9 +117,6 @@ function AppLayout({ children }) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div">
-
-                    </Typography>
                 </Toolbar>
             </AppBar>
             <Box
@@ -99,7 +129,7 @@ function AppLayout({ children }) {
                     open={mobileOpen}
                     onClose={handleDrawerToggle}
                     ModalProps={{
-                        keepMounted: true, 
+                        keepMounted: true,
                     }}
                     sx={{
                         display: { xs: "block", sm: "none" },
@@ -134,10 +164,14 @@ function AppLayout({ children }) {
                 }}
             >
                 <Toolbar />
-                { children }
+                <div className="w-[90%] mx-auto">
+                    <Header />
+                    <Toolbar />
+                    {children}
+                </div>
             </Box>
         </Box>
     );
 }
 
-export default AppLayout
+export default AppLayout;
